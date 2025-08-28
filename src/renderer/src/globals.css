@@ -42,6 +42,20 @@ body {
   position: absolute;
   right: 12px;
 }
+*::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+*::-webkit-scrollbar-track {
+  background: #1F1F1F;
+}
+*::-webkit-scrollbar-thumb {
+  background: #2F2F2F;
+  border-radius: 5px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 @media (max-width: 640px) {
   .floating-threads {
     display: block;

@@ -11,7 +11,7 @@ export function Editor(): JSX.Element {
   const editor = useCreateBlockNoteWithLiveblocks({}, { mentions: true }) as BlockNoteEditor
 
   return (
-    <div>
+    <div className="editor-container">
       <BlockNoteView editor={editor} className="editor" />
       <Threads editor={editor} />
     </div>

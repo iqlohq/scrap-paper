@@ -11,3 +11,13 @@ div:has(> .editor) {
   max-width: 100%;
   width: 100%;
 }
+
+.drag-region {
+  -webkit-app-region: drag;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 32px;
+  z-index: 1000;
+}

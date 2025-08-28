@@ -7,7 +7,7 @@ html {
   height: 100vh;
 }
 
-#root > div {
+.editor-container {
   height: 100%;
 }
 

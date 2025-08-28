@@ -7,6 +7,10 @@ import { Editor } from './components/Editor'
 import './globals.css'
 import './styles.css'
 
+// TODO: Notification
+// TODO: Authentication
+// TODO: Styling
+
 export default function App(): JSX.Element {
   return (
     <LiveblocksProvider publicApiKey="pk_dev_t2fgHDjp63aK6LNHVO5WxSqruZH_fRwqDvkP5Hjl_0GwThDWUUH6PcKlRfdC3B0U">

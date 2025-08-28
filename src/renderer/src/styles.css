@@ -11,3 +11,24 @@ div:has(> .editor) {
   max-width: 100%;
   width: 100%;
 }
+.bn-container .bn-default-styles {
+  font-size: 14px;
+}
+.bn-container h1 {
+  font-size: 30px;
+}
+.bn-container h2 {
+  font-size: 22px;
+}
+.bn-container h3 {
+  font-size: 18px;
+}
+.bn-container h4 {
+  font-size: 14px;
+}
+.bn-container h5 {
+  font-size: 14px;
+}
+.bn-container h6 {
+  font-size: 14px;
+}

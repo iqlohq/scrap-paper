@@ -1,35 +1,20 @@
-import Versions from './components/Versions'
-import electronLogo from './assets/electron.svg'
+import '@liveblocks/react-tiptap/styles.css'
+import '@liveblocks/react-ui/styles.css'
+import '@liveblocks/react-ui/styles/dark/media-query.css'
+import { ClientSideSuspense, LiveblocksProvider, RoomProvider } from '@liveblocks/react/suspense'
+import { JSX } from 'react'
+import { Editor } from './components/Editor'
+import './globals.css'
+import './styles.css'
 
-function App(): React.JSX.Element {
-  const ipcHandle = (): void => window.electron.ipcRenderer.send('ping')
-
+export default function App(): JSX.Element {
   return (
-    <>
-      <img alt="logo" className="logo" src={electronLogo} />
-      <div className="creator">Powered by electron-vite</div>
-      <div className="text">
-        Build an Electron app with <span className="react">React</span>
-        &nbsp;and <span className="ts">TypeScript</span>
-      </div>
-      <p className="tip">
-        Please try pressing <code>F12</code> to open the devTool
-      </p>
-      <div className="actions">
-        <div className="action">
-          <a href="https://electron-vite.org/" target="_blank" rel="noreferrer">
-            Documentation
-          </a>
-        </div>
-        <div className="action">
-          <a target="_blank" rel="noreferrer" onClick={ipcHandle}>
-            Send IPC
-          </a>
-        </div>
-      </div>
-      <Versions></Versions>
-    </>
+    <LiveblocksProvider publicApiKey="pk_dev_t2fgHDjp63aK6LNHVO5WxSqruZH_fRwqDvkP5Hjl_0GwThDWUUH6PcKlRfdC3B0U">
+      <RoomProvider id="my-room">
+        <ClientSideSuspense fallback={<div>Loading…</div>}>
+          <Editor />
+        </ClientSideSuspense>
+      </RoomProvider>
+    </LiveblocksProvider>
   )
 }
-
-export default App

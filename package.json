@@ -21,9 +21,13 @@
     "build:linux": "electron-vite build && electron-builder --linux"
   },
   "dependencies": {
+    "@blocknote/core": "^0.36.1",
+    "@blocknote/mantine": "^0.36.1",
+    "@blocknote/react": "^0.36.1",
     "@electron-toolkit/preload": "^3.0.2",
     "@electron-toolkit/utils": "^4.0.0",
     "@liveblocks/react": "^3.5.0",
+    "@liveblocks/react-blocknote": "^3.5.0",
     "@liveblocks/react-tiptap": "^3.5.0",
     "@liveblocks/react-ui": "^3.5.0",
     "electron-updater": "^6.3.9"

@@ -23,6 +23,9 @@
   "dependencies": {
     "@electron-toolkit/preload": "^3.0.2",
     "@electron-toolkit/utils": "^4.0.0",
+    "@liveblocks/react": "^3.5.0",
+    "@liveblocks/react-tiptap": "^3.5.0",
+    "@liveblocks/react-ui": "^3.5.0",
     "electron-updater": "^6.3.9"
   },
   "devDependencies": {

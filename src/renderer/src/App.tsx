@@ -12,9 +12,11 @@ import TitleBar from "./components/TitleBar";
 import "./globals.css";
 import "./styles.css";
 
-// TODO: Notification
-// TODO: Authentication
-// TODO: Styling
+// TODO: Notification - focus button, onOpen, onClose
+// TODO: Authentication Done.
+// TODO: Styling - loading. checkmark
+// TODO: Hotkeys - F6 to open/close
+// TODO: Startup
 
 export default function App(): JSX.Element {
   return (

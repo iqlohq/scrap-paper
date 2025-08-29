@@ -1,8 +1,21 @@
-import { contextBridge } from "electron";
 import { electronAPI } from "@electron-toolkit/preload";
+import { contextBridge, ipcRenderer } from "electron";
 
 // Custom APIs for renderer
-const api = {};
+const api = {
+  onWindowFocus(callback: (event: Electron.IpcRendererEvent) => void) {
+    ipcRenderer.on("window-focus", callback);
+  },
+  onWindowBlur(callback: (event: Electron.IpcRendererEvent) => void) {
+    ipcRenderer.on("window-blur", callback);
+  },
+  removeWindowFocus(callback: (event: Electron.IpcRendererEvent) => void) {
+    ipcRenderer.removeListener("window-focus", callback);
+  },
+  removeWindowBlur(callback: (event: Electron.IpcRendererEvent) => void) {
+    ipcRenderer.removeListener("window-blur", callback);
+  },
+};
 
 // Use `contextBridge` APIs to expose Electron APIs to
 // renderer only if context isolation is enabled, otherwise

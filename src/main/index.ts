@@ -33,6 +33,16 @@ function createWindow(): void {
     mainWindow.show();
   });
 
+  mainWindow.on("focus", () => {
+    // Notify renderer that the window gained focus
+    mainWindow.webContents.send("window-focus");
+  });
+
+  mainWindow.on("blur", () => {
+    // Notify renderer that the window lost focus
+    mainWindow.webContents.send("window-blur");
+  });
+
   mainWindow.webContents.setWindowOpenHandler((details) => {
     shell.openExternal(details.url);
     return { action: "deny" };

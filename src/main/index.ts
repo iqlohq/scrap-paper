@@ -1,13 +1,25 @@
 import { electronApp, is, optimizer } from "@electron-toolkit/utils";
-import { app, BrowserWindow, ipcMain, Notification, shell } from "electron";
+import {
+  app,
+  BrowserWindow,
+  ipcMain,
+  Menu,
+  nativeImage,
+  Notification,
+  shell,
+  Tray,
+} from "electron";
 import { join } from "path";
 import icon from "../../resources/icon.png?asset";
 
 let isQuitting = false;
+let mainWindow: BrowserWindow | null = null;
+let tray: Tray | null = null;
+let isTrayToggleInProgress = false;
 
 function createWindow(): void {
   // Create the browser window.
-  const mainWindow = new BrowserWindow({
+  const win = new BrowserWindow({
     minWidth: 300,
     minHeight: 300,
     width: 900,
@@ -23,38 +35,89 @@ function createWindow(): void {
       sandbox: false,
     },
   });
+  mainWindow = win;
 
-  mainWindow.on("close", (e) => {
+  win.on("close", (e) => {
     if (process.platform === "darwin" && !isQuitting) {
       e.preventDefault();
-      mainWindow.hide();
+      win.hide();
     }
   });
 
-  mainWindow.on("ready-to-show", () => {
-    mainWindow.show();
+  win.on("ready-to-show", () => {
+    win.show();
   });
 
-  mainWindow.on("focus", () => {
+  win.on("focus", () => {
     // Notify renderer that the window gained focus
-    mainWindow.webContents.send("window-focus");
+    win.webContents.send("window-focus");
   });
 
-  mainWindow.on("blur", () => {
+  win.on("blur", () => {
     // Notify renderer that the window lost focus
-    mainWindow.webContents.send("window-blur");
+    win.webContents.send("window-blur");
   });
 
-  mainWindow.webContents.setWindowOpenHandler((details) => {
+  win.webContents.setWindowOpenHandler((details) => {
     shell.openExternal(details.url);
     return { action: "deny" };
   });
 
   if (is.dev && process.env["ELECTRON_RENDERER_URL"]) {
-    mainWindow.loadURL(process.env["ELECTRON_RENDERER_URL"]);
+    win.loadURL(process.env["ELECTRON_RENDERER_URL"]);
   } else {
-    mainWindow.loadFile(join(__dirname, "../renderer/index.html"));
+    win.loadFile(join(__dirname, "../renderer/index.html"));
   }
+}
+
+function toggleMainWindow(): void {
+  if (!mainWindow) return;
+  if (isTrayToggleInProgress) return;
+  isTrayToggleInProgress = true;
+
+  if (mainWindow.isVisible()) {
+    mainWindow.once("hide", () => {
+      isTrayToggleInProgress = false;
+    });
+    mainWindow.hide();
+  } else {
+    if (mainWindow.isMinimized()) {
+      mainWindow.restore();
+    }
+    mainWindow.once("show", () => {
+      mainWindow?.focus();
+      isTrayToggleInProgress = false;
+    });
+    mainWindow.show();
+  }
+}
+
+function createTray(): void {
+  const transparentPngDataUrl =
+    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAucB9WH0X0EAAAAASUVORK5CYII=";
+  const transparentImage = nativeImage.createFromDataURL(transparentPngDataUrl);
+  tray = new Tray(transparentImage);
+  tray.setTitle("✏️");
+  tray.setToolTip("Scrap Paper");
+  tray.setIgnoreDoubleClickEvents(true);
+
+  const contextMenu = Menu.buildFromTemplate([
+    {
+      label: "Quit",
+      click: () => {
+        isQuitting = true;
+        app.quit();
+      },
+    },
+  ]);
+  // Only show context menu on right-click
+  tray.on("right-click", () => {
+    tray?.popUpContextMenu(contextMenu);
+  });
+
+  tray.on("click", () => {
+    toggleMainWindow();
+  });
 }
 
 // This method will be called when Electron has finished
@@ -101,6 +164,7 @@ app.whenReady().then(() => {
   });
 
   createWindow();
+  createTray();
 
   app.on("activate", function () {
     // On macOS it's common to re-create a window in the app when the

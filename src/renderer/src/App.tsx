@@ -25,7 +25,7 @@ export default function App(): JSX.Element {
     <LiveblocksProvider publicApiKey="pk_dev_t2fgHDjp63aK6LNHVO5WxSqruZH_fRwqDvkP5Hjl_0GwThDWUUH6PcKlRfdC3B0U">
       <RoomProvider
         id="my-room"
-        initialPresence={{ id: "iqlo", status: "active" }}
+        initialPresence={{ id: "s", status: "active" }}
       >
         <ClientSideSuspense
           fallback={

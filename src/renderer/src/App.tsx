@@ -19,7 +19,10 @@ import "./styles.css";
 export default function App(): JSX.Element {
   return (
     <LiveblocksProvider publicApiKey="pk_dev_t2fgHDjp63aK6LNHVO5WxSqruZH_fRwqDvkP5Hjl_0GwThDWUUH6PcKlRfdC3B0U">
-      <RoomProvider id="my-room" initialPresence={{ id: "iqlo" }}>
+      <RoomProvider
+        id="my-room"
+        initialPresence={{ id: "iqlo", status: "active" }}
+      >
         <ClientSideSuspense fallback={<div>Loading…</div>}>
           <TitleBar />
           <Editor />

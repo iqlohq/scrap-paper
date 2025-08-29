@@ -1,20 +1,19 @@
-import { useOthers } from "@liveblocks/react";
+import { useOthers, useUpdateMyPresence } from "@liveblocks/react";
 import { DotIcon } from "lucide-react";
-import { JSX, useEffect, useState } from "react";
+import { JSX, useEffect } from "react";
 
 export default function TitleBar(): JSX.Element {
   const others = useOthers();
+  const updateMyPresence = useUpdateMyPresence();
+
   console.log(others);
-  const [hasFocus, setHasFocus] = useState(true);
 
   useEffect(() => {
     const handleFocus = () => {
-      console.log("focus");
-      setHasFocus(true);
+      updateMyPresence({ status: "active" });
     };
     const handleBlur = () => {
-      console.log("blur");
-      setHasFocus(false);
+      updateMyPresence({ status: "away" });
     };
 
     window.api.onWindowFocus(handleFocus as any);
@@ -26,7 +25,13 @@ export default function TitleBar(): JSX.Element {
     };
   }, []);
 
-  const cn = hasFocus ? "text-green-500" : "text-red-500";
+  const online = others.length > 0;
+  const active = others.some((other) => other.presence.status === "active");
+  const cn = online
+    ? active
+      ? "text-green-500"
+      : "text-yellow-500"
+    : "text-red-500";
   return (
     <div className="drag-region items-center">
       <div>

@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 html {
   font-family: Inter, sans-serif;
   background-color: #1f1f1f;
@@ -98,19 +100,100 @@ div:has(> .editor) {
 }
 
 .bn-container .bn-default-styles {
-  font-size: 16px;
-  font-weight: 450;
+  font-weight: 400;
   font-family: monospace;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-.bn-container [class^="placeholder-selector-"] {
+.bn-container .bn-default-styles p,
+code {
+  font-size: 14px;
+}
+
+.bn-editor {
   padding-top: 0px !important;
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: 40px !important;
+  padding-right: 40px !important;
 }
 
 .bn-mantine .bn-side-menu {
   --mantine-scale: 0.75;
+}
+
+.bn-side-menu {
+  height: 27px !important;
+}
+
+.bn-side-menu[data-block-type="heading"][data-level="1"] {
+  height: 39.59px !important;
+}
+
+.bn-side-menu[data-block-type="heading"][data-level="2"] {
+  height: 34.8px !important;
+}
+
+.bn-side-menu[data-block-type="heading"][data-level="3"] {
+  height: 30px !important;
+}
+
+.bn-side-menu[data-block-type="heading"][data-level="4"] {
+  height: 30px !important;
+}
+
+.bn-side-menu[data-block-type="heading"][data-level="5"] {
+  height: 30px !important;
+}
+
+.bn-side-menu[data-block-type="heading"][data-level="6"] {
+  height: 30px !important;
+}
+
+[data-content-type="heading"] {
+  --level: 1.4em;
+}
+
+[data-content-type="heading"][data-level="2"] {
+  --level: 1.2em;
+}
+
+[data-content-type="heading"][data-level="3"] {
+  --level: 1em;
+}
+
+[data-content-type="heading"][data-level="4"] {
+  --level: 1em;
+}
+
+[data-content-type="heading"][data-level="5"] {
+  --level: 1em;
+}
+
+[data-content-type="heading"][data-level="6"] {
+  --level: 1em;
+}
+
+[data-content-type="heading"] {
+  font-size: var(--level);
+}
+
+.bn-block code {
+  background-color: #2f2f2f;
+  @apply text-red-400;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+.bn-block-content[data-content-type="codeBlock"] > pre {
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.bn-block .bn-block-content pre code {
+  background-color: inherit;
+  color: inherit;
+  padding: inherit;
+  border-radius: inherit;
+}
+
+.bn-block-content[data-content-type="checkListItem"] > div > div > input {
+  background-color: #2f2f2f00 !important;
 }

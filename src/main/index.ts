@@ -31,6 +31,7 @@ function createWindow(): void {
     titleBarStyle: "hiddenInset",
     ...(process.platform === "linux" ? { icon } : {}),
     webPreferences: {
+      devTools: is.dev,
       preload: join(__dirname, "../preload/index.js"),
       sandbox: false,
     },

@@ -30,7 +30,9 @@
     "@liveblocks/react-blocknote": "^3.5.0",
     "@liveblocks/react-tiptap": "^3.5.0",
     "@liveblocks/react-ui": "^3.5.0",
-    "electron-updater": "^6.3.9"
+    "@tailwindcss/vite": "^4.1.12",
+    "electron-updater": "^6.3.9",
+    "tailwindcss": "^4.1.12"
   },
   "devDependencies": {
     "@electron-toolkit/eslint-config-prettier": "^3.0.0",
@@ -47,6 +49,7 @@
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
+    "lucide-react": "^0.542.0",
     "prettier": "^3.6.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",

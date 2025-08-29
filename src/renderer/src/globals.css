@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 html {
   font-family: Inter, sans-serif;
   background-color: #1f1f1f;
@@ -14,6 +16,8 @@ body {
 
 .drag-region {
   -webkit-app-region: drag;
+  display: flex;
+  flex-flow: row-reverse;
   position: fixed;
   top: 0;
   left: 0;

@@ -4,6 +4,7 @@ import '@liveblocks/react-ui/styles/dark/media-query.css'
 import { ClientSideSuspense, LiveblocksProvider, RoomProvider } from '@liveblocks/react/suspense'
 import { JSX } from 'react'
 import { Editor } from './components/Editor'
+import TitleBar from './components/TitleBar'
 import './globals.css'
 import './styles.css'
 
@@ -14,9 +15,9 @@ import './styles.css'
 export default function App(): JSX.Element {
   return (
     <LiveblocksProvider publicApiKey="pk_dev_t2fgHDjp63aK6LNHVO5WxSqruZH_fRwqDvkP5Hjl_0GwThDWUUH6PcKlRfdC3B0U">
-      <RoomProvider id="my-room">
+      <RoomProvider id="my-room" initialPresence={{ id: 'iqlo' }}>
         <ClientSideSuspense fallback={<div>Loading…</div>}>
-          <div className="drag-region" />
+          <TitleBar />
           <Editor />
         </ClientSideSuspense>
       </RoomProvider>

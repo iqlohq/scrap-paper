@@ -7,9 +7,10 @@ import {
   RoomProvider,
 } from "@liveblocks/react/suspense";
 import { JSX } from "react";
-import { Editor } from "./components/Editor";
-import TitleBar from "./components/TitleBar";
 import "./assets/shadcn.css";
+import { Editor } from "./components/Editor";
+import { Loader } from "./components/shadcn-ui/loader";
+import TitleBar from "./components/TitleBar";
 import "./globals.css";
 import "./styles.css";
 
@@ -26,7 +27,14 @@ export default function App(): JSX.Element {
         id="my-room"
         initialPresence={{ id: "iqlo", status: "active" }}
       >
-        <ClientSideSuspense fallback={<div>Loading…</div>}>
+        <ClientSideSuspense
+          fallback={
+            <div className="flex h-full w-full flex-col items-center justify-center [--webkit-app-region:drag]">
+              <Loader variant="dots" />
+              <span className="mt-3 text-sm text-gray-200">Connecting...</span>
+            </div>
+          }
+        >
           <TitleBar />
           <Editor />
         </ClientSideSuspense>

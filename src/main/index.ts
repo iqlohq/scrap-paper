@@ -8,6 +8,8 @@ let isQuitting = false;
 function createWindow(): void {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
+    minWidth: 300,
+    minHeight: 300,
     width: 900,
     height: 670,
     show: false,

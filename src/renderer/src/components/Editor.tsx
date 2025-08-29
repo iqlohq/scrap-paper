@@ -6,6 +6,7 @@ import {
 } from "@blocknote/mantine";
 import "@blocknote/mantine/style.css";
 
+import { cn } from "@renderer/lib/utils";
 import { JSX } from "react";
 import { useScrapPaper } from "../providers/scrap-paper-context";
 import { Threads } from "./Threads";
@@ -16,11 +17,15 @@ const darkTheme: Theme = {
 };
 
 export function Editor(): JSX.Element {
-  const { editor } = useScrapPaper();
+  const { editor, showLiveCursor } = useScrapPaper();
 
   return (
     <div className="editor-container">
-      <BlockNoteView editor={editor} className="editor" theme={darkTheme} />
+      <BlockNoteView
+        editor={editor}
+        className={cn("editor", { "hide-caret": !showLiveCursor })}
+        theme={darkTheme}
+      />
       <Threads editor={editor} />
     </div>
   );

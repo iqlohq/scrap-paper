@@ -5,15 +5,16 @@ import {
   useUpdateMyPresence,
 } from "@liveblocks/react";
 import { useScrapPaper } from "@renderer/providers/scrap-paper-context";
-import { DotIcon, MegaphoneIcon, TrashIcon } from "lucide-react";
+import { DotIcon, MegaphoneIcon, TextCursor, TrashIcon } from "lucide-react";
 import { JSX, useEffect, useRef } from "react";
 import { Button } from "./shadcn-ui/button";
+import { Toggle } from "./shadcn-ui/toggle";
 
 export default function TitleBar(): JSX.Element {
   const others = useOthers();
   const updateMyPresence = useUpdateMyPresence();
   const broadcast = useBroadcastEvent();
-  const { clearDoc } = useScrapPaper();
+  const { clearDoc, showLiveCursor, setShowLiveCursor } = useScrapPaper();
   const numOthers = useRef(0);
 
   useEffect(() => {
@@ -75,14 +76,26 @@ export default function TitleBar(): JSX.Element {
         size="sm"
         className="text-gray-500 hover:bg-transparent hover:text-gray-200"
         onClick={handlePayAttention}
+        title="Send Notification"
       >
         <MegaphoneIcon />
       </Button>
+      <Toggle
+        variant="default"
+        size="sm"
+        className="text-gray-500"
+        title="Toggle Live Cursor"
+        onPressedChange={(checked) => setShowLiveCursor(checked as boolean)}
+        pressed={showLiveCursor}
+      >
+        <TextCursor />
+      </Toggle>
       <Button
         variant="ghost"
         size="sm"
         className="text-gray-500 hover:bg-transparent hover:text-gray-200"
         onClick={handleClear}
+        title="Clear Content"
       >
         <TrashIcon />
       </Button>

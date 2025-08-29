@@ -1,6 +1,6 @@
 import { BlockNoteEditor } from "@blocknote/core";
 import { useCreateBlockNoteWithLiveblocks } from "@liveblocks/react-blocknote";
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 import { ScrapPaperContext } from "./scrap-paper-context";
 
 interface ScrapPaperProviderProps {
@@ -19,8 +19,12 @@ export function ScrapPaperProvider({ children }: ScrapPaperProviderProps) {
     if (allIds.length) editor.removeBlocks(allIds);
   };
 
+  const [showLiveCursor, setShowLiveCursor] = useState(true);
+
   return (
-    <ScrapPaperContext.Provider value={{ editor, clearDoc }}>
+    <ScrapPaperContext.Provider
+      value={{ editor, clearDoc, showLiveCursor, setShowLiveCursor }}
+    >
       {children}
     </ScrapPaperContext.Provider>
   );

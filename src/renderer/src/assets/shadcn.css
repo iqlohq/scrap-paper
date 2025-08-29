@@ -122,6 +122,12 @@
   }
 }
 
+@layer utilities {
+  .hide-caret .collaboration-cursor__caret {
+    display: none !important;
+  }
+}
+
 @keyframes typing {
   0%,
   100% {

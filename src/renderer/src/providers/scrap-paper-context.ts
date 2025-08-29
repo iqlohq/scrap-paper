@@ -3,6 +3,8 @@ import { createContext, useContext } from "react";
 
 interface ScrapPaperContextState {
   editor: BlockNoteEditor;
+  showLiveCursor: boolean;
+  setShowLiveCursor: (show: boolean) => void;
   clearDoc: () => void;
 }
 

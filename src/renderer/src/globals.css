@@ -176,7 +176,7 @@ blockquote {
   font-size: var(--level);
 }
 
-.bn-block code {
+.bn-block-content:not([data-content-type="codeBlock"]) code {
   background-color: #2f2f2f;
   @apply text-red-400;
   padding: 2px 4px;
@@ -186,13 +186,6 @@ blockquote {
 .bn-block-content[data-content-type="codeBlock"] > pre {
   margin-top: 3px;
   margin-bottom: 3px;
-}
-
-.bn-block-content[data-content-type="codeBlock"] > pre > code {
-  background-color: inherit;
-  color: inherit;
-  padding: inherit;
-  border-radius: inherit;
 }
 
 .bn-block-content[data-content-type="checkListItem"] > div > div > input {

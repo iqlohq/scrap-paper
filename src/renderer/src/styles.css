@@ -19,3 +19,11 @@ div:has(> .editor) {
 .collaboration-cursor__caret {
   margin-left: 1px !important;
 }
+
+.bn-container .bn-default-styles {
+  font-size: 14px;
+  font-weight: 450;
+  font-family: monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

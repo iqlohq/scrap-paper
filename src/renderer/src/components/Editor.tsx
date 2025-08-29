@@ -15,7 +15,7 @@ export function Editor(): JSX.Element {
 
   return (
     <div className="editor-container">
-      <BlockNoteView editor={editor} className="editor" />
+      <BlockNoteView editor={editor} className="editor" theme="dark" />
       <Threads editor={editor} />
     </div>
   );

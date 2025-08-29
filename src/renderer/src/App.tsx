@@ -9,6 +9,7 @@ import {
 import { JSX } from "react";
 import { Editor } from "./components/Editor";
 import TitleBar from "./components/TitleBar";
+import "./assets/shadcn.css";
 import "./globals.css";
 import "./styles.css";
 

@@ -30,6 +30,7 @@
     "@liveblocks/react-blocknote": "^3.5.0",
     "@liveblocks/react-tiptap": "^3.5.0",
     "@liveblocks/react-ui": "^3.5.0",
+    "@radix-ui/react-slot": "^1.2.3",
     "@tailwindcss/vite": "^4.1.12",
     "electron-updater": "^6.3.9",
     "tailwindcss": "^4.1.12"
@@ -42,6 +43,7 @@
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "@vitejs/plugin-react": "^4.7.0",
+    "class-variance-authority": "^0.7.1",
     "electron": "^37.4.0",
     "electron-builder": "^25.1.8",
     "electron-vite": "^4.0.0",
@@ -54,6 +56,8 @@
     "prettier-plugin-tailwindcss": "^0.6.14",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "tailwind-merge": "^3.3.1",
+    "tw-animate-css": "^1.3.7",
     "typescript": "^5.8.3",
     "vite": "^7.0.5"
   },

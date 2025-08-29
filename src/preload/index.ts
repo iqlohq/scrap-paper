@@ -15,6 +15,9 @@ const api = {
   removeWindowBlur(callback: (event: Electron.IpcRendererEvent) => void) {
     ipcRenderer.removeListener("window-blur", callback);
   },
+  sendNotification: (msg: string) => {
+    ipcRenderer.send("notify", msg);
+  },
 };
 
 // Use `contextBridge` APIs to expose Electron APIs to

@@ -1,5 +1,5 @@
 import { electronApp, is, optimizer } from "@electron-toolkit/utils";
-import { app, BrowserWindow, ipcMain, shell } from "electron";
+import { app, BrowserWindow, ipcMain, Notification, shell } from "electron";
 import { join } from "path";
 import icon from "../../resources/icon.png?asset";
 
@@ -73,6 +73,13 @@ app.whenReady().then(() => {
 
   // IPC test
   ipcMain.on("ping", () => console.log("pong"));
+
+  ipcMain.on("notify", (_, msg: string) => {
+    new Notification({
+      title: "Scrap Paper",
+      body: msg,
+    }).show();
+  });
 
   app.on("before-quit", () => {
     isQuitting = true;

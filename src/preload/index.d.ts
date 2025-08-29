@@ -16,6 +16,7 @@ declare global {
       removeWindowBlur: (
         callback: (event: Electron.IpcRendererEvent) => void
       ) => void;
+      sendNotification: (msg: string) => void;
     };
   }
 }

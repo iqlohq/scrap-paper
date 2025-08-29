@@ -23,18 +23,21 @@ importers:
       '@electron-toolkit/utils':
         specifier: ^4.0.0
         version: 4.0.0(electron@37.4.0)
+      '@liveblocks/node':
+        specifier: ^3.5.1
+        version: 3.5.1(@types/json-schema@7.0.15)(encoding@0.1.13)
       '@liveblocks/react':
-        specifier: ^3.5.0
-        version: 3.5.0(@types/json-schema@7.0.15)(@types/react-dom@19.1.9(@types/react@19.1.12))(@types/react@19.1.12)(react@19.1.1)
+        specifier: ^3.5.1
+        version: 3.5.1(@types/json-schema@7.0.15)(@types/react-dom@19.1.9(@types/react@19.1.12))(@types/react@19.1.12)(react@19.1.1)
       '@liveblocks/react-blocknote':
-        specifier: ^3.5.0
-        version: 3.5.0(0aa0b9a66d43e7edde2cbf5dab31d87a)
+        specifier: ^3.5.1
+        version: 3.5.1(0aa0b9a66d43e7edde2cbf5dab31d87a)
       '@liveblocks/react-tiptap':
-        specifier: ^3.5.0
-        version: 3.5.0(@tiptap/extension-collaboration-cursor@2.26.1(@tiptap/core@2.26.1(@tiptap/pm@2.26.1))(y-prosemirror@1.3.7(prosemirror-model@1.25.3)(prosemirror-state@1.4.3)(prosemirror-view@1.40.1)(y-protocols@1.0.6(yjs@13.6.27))(yjs@13.6.27)))(@tiptap/extension-collaboration@2.26.1(@tiptap/core@2.26.1(@tiptap/pm@2.26.1))(@tiptap/pm@2.26.1)(y-prosemirror@1.3.7(prosemirror-model@1.25.3)(prosemirror-state@1.4.3)(prosemirror-view@1.40.1)(y-protocols@1.0.6(yjs@13.6.27))(yjs@13.6.27)))(@tiptap/pm@2.26.1)(@tiptap/react@2.26.1(@tiptap/core@2.26.1(@tiptap/pm@2.26.1))(@tiptap/pm@2.26.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(@tiptap/suggestion@2.26.1(@tiptap/core@2.26.1(@tiptap/pm@2.26.1))(@tiptap/pm@2.26.1))(@types/json-schema@7.0.15)(@types/react-dom@19.1.9(@types/react@19.1.12))(@types/react@19.1.12)(prosemirror-model@1.25.3)(prosemirror-state@1.4.3)(prosemirror-view@1.40.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(y-protocols@1.0.6(yjs@13.6.27))
+        specifier: ^3.5.1
+        version: 3.5.1(@tiptap/extension-collaboration-cursor@2.26.1(@tiptap/core@2.26.1(@tiptap/pm@2.26.1))(y-prosemirror@1.3.7(prosemirror-model@1.25.3)(prosemirror-state@1.4.3)(prosemirror-view@1.40.1)(y-protocols@1.0.6(yjs@13.6.27))(yjs@13.6.27)))(@tiptap/extension-collaboration@2.26.1(@tiptap/core@2.26.1(@tiptap/pm@2.26.1))(@tiptap/pm@2.26.1)(y-prosemirror@1.3.7(prosemirror-model@1.25.3)(prosemirror-state@1.4.3)(prosemirror-view@1.40.1)(y-protocols@1.0.6(yjs@13.6.27))(yjs@13.6.27)))(@tiptap/pm@2.26.1)(@tiptap/react@2.26.1(@tiptap/core@2.26.1(@tiptap/pm@2.26.1))(@tiptap/pm@2.26.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(@tiptap/suggestion@2.26.1(@tiptap/core@2.26.1(@tiptap/pm@2.26.1))(@tiptap/pm@2.26.1))(@types/json-schema@7.0.15)(@types/react-dom@19.1.9(@types/react@19.1.12))(@types/react@19.1.12)(prosemirror-model@1.25.3)(prosemirror-state@1.4.3)(prosemirror-view@1.40.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(y-protocols@1.0.6(yjs@13.6.27))
       '@liveblocks/react-ui':
-        specifier: ^3.5.0
-        version: 3.5.0(@types/json-schema@7.0.15)(@types/react-dom@19.1.9(@types/react@19.1.12))(@types/react@19.1.12)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+        specifier: ^3.5.1
+        version: 3.5.1(@types/json-schema@7.0.15)(@types/react-dom@19.1.9(@types/react@19.1.12))(@types/react@19.1.12)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@radix-ui/react-slot':
         specifier: ^1.2.3
         version: 1.2.3(@types/react@19.1.12)(react@19.1.1)
@@ -583,16 +586,19 @@ packages:
   '@juggle/resize-observer@3.4.0':
     resolution: {integrity: sha512-dfLbk+PwWvFzSxwk3n5ySL0hfBog779o8h68wK/7/APo/7cgyWp5jcXockbxdk5kFRkbeXWm4Fbi9FrdN381sA==}
 
-  '@liveblocks/client@3.5.0':
-    resolution: {integrity: sha512-+IsHlOSvH6s+ZgGCL3UradlFmfQmKhq6rIywn83V5EMa121MJTaoW4BOh46+kbq6p1wqKtbnNDETQqYD1ZvoTg==}
+  '@liveblocks/client@3.5.1':
+    resolution: {integrity: sha512-Mqj/7l22W+tVPiZs+r+wL1VPsxbcToWtUPHQmGRyFE2uTQsZ0kcV3RfcR0koq6QpKgsH5KAYOnNYKbvb/HA+1A==}
 
-  '@liveblocks/core@3.5.0':
-    resolution: {integrity: sha512-8VNO6qER5is5e4TCvPRoREYQCt0YMaaWZr86dBXojO9y2GkE8n8rNITKn8p8UjdEDzomCyeVoJx9b5TOQBlJzw==}
+  '@liveblocks/core@3.5.1':
+    resolution: {integrity: sha512-7z2qcQUMfYNjiYzeKdYeR7URhTURJ99eFm8Yfuoi6NbYVYQ4DcLRqwDKmYJbIhDF9z3uirUuyK4S7L+GfS30mQ==}
     peerDependencies:
       '@types/json-schema': ^7
 
-  '@liveblocks/react-blocknote@3.5.0':
-    resolution: {integrity: sha512-oSlDWuvk84Nb/Xn0CKy0ehZoYGIz4y77xwhdebOqf9ySpBMMiUqwi4cEcJAGPge2sz0kLHlN6RF8NI+tsFu70A==}
+  '@liveblocks/node@3.5.1':
+    resolution: {integrity: sha512-R7vRvDGnHErsa5zZMWXT9ButgERCze7jsrdFnsZnzcpyljl9uuoAgzFL/D7EZUDD0egj92ukkt5wFciiVM/JHg==}
+
+  '@liveblocks/react-blocknote@3.5.1':
+    resolution: {integrity: sha512-waykjfca9KwC4XUrOPH0jWt5/jJuoBeTGPK3XfMeUJKPc+Wucu3VJGEC3YnRr0Ob94PygdFu07LUgNuN6sfGrA==}
     peerDependencies:
       '@blocknote/core': 0.25.1 - 1.0.0
       '@blocknote/react': 0.25.1 - 1.0.0
@@ -607,8 +613,8 @@ packages:
       '@types/react-dom':
         optional: true
 
-  '@liveblocks/react-tiptap@3.5.0':
-    resolution: {integrity: sha512-+6HkrFGEhQM5VVTUJ4oXqHFv9oNjdAbEhmBLhUkHijLbDkoTTgxg/uDj0KuBSW01ZIAAWTRTykS9D3Bdt4Jf6w==}
+  '@liveblocks/react-tiptap@3.5.1':
+    resolution: {integrity: sha512-9PHoZQu7QqnrnUQbBw0Iceydl1MCXJfvcI0J8TwvTTFRjn0LGpUK9SPe/meIjwEj3V+mPvzsibQcofH0t+5Dbw==}
     peerDependencies:
       '@tiptap/extension-collaboration': ^2.7.2
       '@tiptap/extension-collaboration-cursor': ^2.7.2
@@ -625,8 +631,8 @@ packages:
       '@types/react-dom':
         optional: true
 
-  '@liveblocks/react-ui@3.5.0':
-    resolution: {integrity: sha512-v5sZFkeAkzTlCArcjRMO2YjGPtnqFfqboUY0w41KILjJgw2mikCXPf7UPrxGSbno8ekO561QbtDq/B0ab2sEtg==}
+  '@liveblocks/react-ui@3.5.1':
+    resolution: {integrity: sha512-PKnNDfqMvuUbf4x4k+iQnCalBSherbykxIjV58ABLq4BbNeL8JvbMbaRpuLGmFU86mC7cJtu0/A0yDIlZlpEUg==}
     peerDependencies:
       '@types/react': '*'
       '@types/react-dom': '*'
@@ -638,8 +644,8 @@ packages:
       '@types/react-dom':
         optional: true
 
-  '@liveblocks/react@3.5.0':
-    resolution: {integrity: sha512-H3z4xsy0tQ8iGbSy03f1uZwUouiJeE85ljHuCqb/UP2dtM33XHDkW4l4snVy73G7uYh/QMvZukeiifhrvmfW4Q==}
+  '@liveblocks/react@3.5.1':
+    resolution: {integrity: sha512-OUvd9W++v7EsjTYqkd0ovoLBQTfJ0lnnPth8Mjgs1vgHvkApAK+0P6l1ZkKrXwYPVYzunrpH93lh27Auu84oUg==}
     peerDependencies:
       '@types/react': '*'
       '@types/react-dom': '*'
@@ -650,8 +656,8 @@ packages:
       '@types/react-dom':
         optional: true
 
-  '@liveblocks/yjs@3.5.0':
-    resolution: {integrity: sha512-4QErtlWmWKoXb/qi1oxZh0KNCWRjwDL1RNuShMDb3ms1vp1b9O1G1SE8nlVDi03+WcvXaW1UmR87LdkwWJUbQA==}
+  '@liveblocks/yjs@3.5.1':
+    resolution: {integrity: sha512-Vvb0PkxM+V7MATcluyO1QGCKD9u5pG3LdaqGEaEoabqdqqkilHs/3HhUmMhibP0B7cr+Zn9DmeDeNS9shhkXxg==}
     peerDependencies:
       yjs: ^13.6.1
 
@@ -1187,6 +1193,9 @@ packages:
   '@sindresorhus/is@4.6.0':
     resolution: {integrity: sha512-t09vSN3MdfsyCHoFcTRCH/iUtG7OJ0CsjzB8cjAmKc/va/kIgeDI/TxsigdncE/4be734m0cvIYwNaV4i2XqAw==}
     engines: {node: '>=10'}
+
+  '@stablelib/base64@1.0.1':
+    resolution: {integrity: sha512-1bnPQqSxSuc3Ii6MhBysoWCg58j97aUjuCSZrGSmDxNqtytIi0k8utUenAwTZN4V5mXXYGsVUI9zeBqy+jBOSQ==}
 
   '@szmarczak/http-timer@4.0.6':
     resolution: {integrity: sha512-4BAffykYOgO+5nzBWYwE3W90sBgLJoUPRWWcL8wlyiM8IB8ipJz3UMJ9KXQd1RKQXpKp8Tutn80HZtWsu2u76w==}
@@ -2287,6 +2296,9 @@ packages:
   fast-levenshtein@2.0.6:
     resolution: {integrity: sha512-DCXu6Ifhqcks7TZKY3Hxp3y6qphY5SJZmrWMDrKcERSOXWQdMhU9Ig/PYrzyw/ul9jOIyh0N4M0tbC5hodg8dw==}
 
+  fast-sha256@1.3.0:
+    resolution: {integrity: sha512-n11RGP/lrWEFI/bWdygLxhI+pVeo1ZYIVwvvPkW7azl/rOy+F3HYRZ2K5zeE9mmkhQppyv9sQFx0JM9UabnpPQ==}
+
   fastq@1.19.1:
     resolution: {integrity: sha512-GwLTyxkCXjXbxqIhTsMI2Nui8huMPtnxg7krajPJAjnEG/iiOS7i+zCtWGZR9G0NBKbXKh6X9m9UIsYX/N6vvQ==}
 
@@ -3288,6 +3300,15 @@ packages:
   node-api-version@0.2.1:
     resolution: {integrity: sha512-2xP/IGGMmmSQpI1+O/k72jF/ykvZ89JeuKX3TLJAYPDVLUalrshrLHkeVcCCZqG/eEa635cr8IBYzgnDvM2O8Q==}
 
+  node-fetch@2.7.0:
+    resolution: {integrity: sha512-c4FRfUm/dbcWZ7U+1Wq0AwCyFL+3nt2bEw05wfxSz+DWpWsitgmSgYmy2dQdWyKC1694ELPqMs/YzUSNozLt8A==}
+    engines: {node: 4.x || >=6.0.0}
+    peerDependencies:
+      encoding: ^0.1.0
+    peerDependenciesMeta:
+      encoding:
+        optional: true
+
   node-gyp@9.4.1:
     resolution: {integrity: sha512-OQkWKbjQKbGkMf/xqI1jjy3oCTgMKJac58G2+bjZb3fza6gW2YrCSdMQYaoTb70crvE//Gngr4f0AgVHmqHvBQ==}
     engines: {node: ^12.13 || ^14.13 || >=16}
@@ -4125,6 +4146,9 @@ packages:
     resolution: {integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==}
     engines: {node: '>=8.0'}
 
+  tr46@0.0.3:
+    resolution: {integrity: sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==}
+
   trim-lines@3.0.1:
     resolution: {integrity: sha512-kRj8B+YHZCc9kQYdWfJB2/oUl9rA99qbowYYBtr4ui4mZyAQ2JpvVBd/6U2YloATfqBhBTSMhTpgBHtU0Mf3Rg==}
 
@@ -4380,6 +4404,12 @@ packages:
 
   web-namespaces@2.0.1:
     resolution: {integrity: sha512-bKr1DkiNa2krS7qxNtdrtHAmzuYGFQLiQ13TsorsdT6ULTkPLKuu5+GsFpDlg6JFjUTwX2DyhMPG2be8uPrqsQ==}
+
+  webidl-conversions@3.0.1:
+    resolution: {integrity: sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==}
+
+  whatwg-url@5.0.0:
+    resolution: {integrity: sha512-saE57nupxk6v3HY35+jzBwYa0rKSy0XR8JSxZPwgLr7ys0IBzhGviA1/TUGJLmSVqs8pb9AnvICXEuOHLprYTw==}
 
   which-boxed-primitive@1.1.1:
     resolution: {integrity: sha512-TbX3mj8n0odCBFVlY8AxkqcHASw3L60jIuF8jFP78az3C2YhmGvqbHBpAjTRH2/xqYunrJ9g1jSyjCjpoWzIAA==}
@@ -5020,26 +5050,36 @@ snapshots:
 
   '@juggle/resize-observer@3.4.0': {}
 
-  '@liveblocks/client@3.5.0(@types/json-schema@7.0.15)':
+  '@liveblocks/client@3.5.1(@types/json-schema@7.0.15)':
     dependencies:
-      '@liveblocks/core': 3.5.0(@types/json-schema@7.0.15)
+      '@liveblocks/core': 3.5.1(@types/json-schema@7.0.15)
     transitivePeerDependencies:
       - '@types/json-schema'
 
-  '@liveblocks/core@3.5.0(@types/json-schema@7.0.15)':
+  '@liveblocks/core@3.5.1(@types/json-schema@7.0.15)':
     dependencies:
       '@types/json-schema': 7.0.15
 
-  '@liveblocks/react-blocknote@3.5.0(0aa0b9a66d43e7edde2cbf5dab31d87a)':
+  '@liveblocks/node@3.5.1(@types/json-schema@7.0.15)(encoding@0.1.13)':
+    dependencies:
+      '@liveblocks/core': 3.5.1(@types/json-schema@7.0.15)
+      '@stablelib/base64': 1.0.1
+      fast-sha256: 1.3.0
+      node-fetch: 2.7.0(encoding@0.1.13)
+    transitivePeerDependencies:
+      - '@types/json-schema'
+      - encoding
+
+  '@liveblocks/react-blocknote@3.5.1(0aa0b9a66d43e7edde2cbf5dab31d87a)':
     dependencies:
       '@blocknote/core': 0.36.1(@types/hast@3.0.4)
       '@blocknote/react': 0.36.1(@types/hast@3.0.4)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
-      '@liveblocks/client': 3.5.0(@types/json-schema@7.0.15)
-      '@liveblocks/core': 3.5.0(@types/json-schema@7.0.15)
-      '@liveblocks/react': 3.5.0(@types/json-schema@7.0.15)(@types/react-dom@19.1.9(@types/react@19.1.12))(@types/react@19.1.12)(react@19.1.1)
-      '@liveblocks/react-tiptap': 3.5.0(@tiptap/extension-collaboration-cursor@2.26.1(@tiptap/core@2.26.1(@tiptap/pm@2.26.1))(y-prosemirror@1.3.7(prosemirror-model@1.25.3)(prosemirror-state@1.4.3)(prosemirror-view@1.40.1)(y-protocols@1.0.6(yjs@13.6.27))(yjs@13.6.27)))(@tiptap/extension-collaboration@2.26.1(@tiptap/core@2.26.1(@tiptap/pm@2.26.1))(@tiptap/pm@2.26.1)(y-prosemirror@1.3.7(prosemirror-model@1.25.3)(prosemirror-state@1.4.3)(prosemirror-view@1.40.1)(y-protocols@1.0.6(yjs@13.6.27))(yjs@13.6.27)))(@tiptap/pm@2.26.1)(@tiptap/react@2.26.1(@tiptap/core@2.26.1(@tiptap/pm@2.26.1))(@tiptap/pm@2.26.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(@tiptap/suggestion@2.26.1(@tiptap/core@2.26.1(@tiptap/pm@2.26.1))(@tiptap/pm@2.26.1))(@types/json-schema@7.0.15)(@types/react-dom@19.1.9(@types/react@19.1.12))(@types/react@19.1.12)(prosemirror-model@1.25.3)(prosemirror-state@1.4.3)(prosemirror-view@1.40.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(y-protocols@1.0.6(yjs@13.6.27))
-      '@liveblocks/react-ui': 3.5.0(@types/json-schema@7.0.15)(@types/react-dom@19.1.9(@types/react@19.1.12))(@types/react@19.1.12)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
-      '@liveblocks/yjs': 3.5.0(@types/json-schema@7.0.15)(yjs@13.6.27)
+      '@liveblocks/client': 3.5.1(@types/json-schema@7.0.15)
+      '@liveblocks/core': 3.5.1(@types/json-schema@7.0.15)
+      '@liveblocks/react': 3.5.1(@types/json-schema@7.0.15)(@types/react-dom@19.1.9(@types/react@19.1.12))(@types/react@19.1.12)(react@19.1.1)
+      '@liveblocks/react-tiptap': 3.5.1(@tiptap/extension-collaboration-cursor@2.26.1(@tiptap/core@2.26.1(@tiptap/pm@2.26.1))(y-prosemirror@1.3.7(prosemirror-model@1.25.3)(prosemirror-state@1.4.3)(prosemirror-view@1.40.1)(y-protocols@1.0.6(yjs@13.6.27))(yjs@13.6.27)))(@tiptap/extension-collaboration@2.26.1(@tiptap/core@2.26.1(@tiptap/pm@2.26.1))(@tiptap/pm@2.26.1)(y-prosemirror@1.3.7(prosemirror-model@1.25.3)(prosemirror-state@1.4.3)(prosemirror-view@1.40.1)(y-protocols@1.0.6(yjs@13.6.27))(yjs@13.6.27)))(@tiptap/pm@2.26.1)(@tiptap/react@2.26.1(@tiptap/core@2.26.1(@tiptap/pm@2.26.1))(@tiptap/pm@2.26.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(@tiptap/suggestion@2.26.1(@tiptap/core@2.26.1(@tiptap/pm@2.26.1))(@tiptap/pm@2.26.1))(@types/json-schema@7.0.15)(@types/react-dom@19.1.9(@types/react@19.1.12))(@types/react@19.1.12)(prosemirror-model@1.25.3)(prosemirror-state@1.4.3)(prosemirror-view@1.40.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(y-protocols@1.0.6(yjs@13.6.27))
+      '@liveblocks/react-ui': 3.5.1(@types/json-schema@7.0.15)(@types/react-dom@19.1.9(@types/react@19.1.12))(@types/react@19.1.12)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+      '@liveblocks/yjs': 3.5.1(@types/json-schema@7.0.15)(yjs@13.6.27)
       '@tiptap/core': 2.26.1(@tiptap/pm@2.26.1)
       react: 19.1.1
       react-dom: 19.1.1(react@19.1.1)
@@ -5061,14 +5101,14 @@ snapshots:
       - y-protocols
       - yjs
 
-  '@liveblocks/react-tiptap@3.5.0(@tiptap/extension-collaboration-cursor@2.26.1(@tiptap/core@2.26.1(@tiptap/pm@2.26.1))(y-prosemirror@1.3.7(prosemirror-model@1.25.3)(prosemirror-state@1.4.3)(prosemirror-view@1.40.1)(y-protocols@1.0.6(yjs@13.6.27))(yjs@13.6.27)))(@tiptap/extension-collaboration@2.26.1(@tiptap/core@2.26.1(@tiptap/pm@2.26.1))(@tiptap/pm@2.26.1)(y-prosemirror@1.3.7(prosemirror-model@1.25.3)(prosemirror-state@1.4.3)(prosemirror-view@1.40.1)(y-protocols@1.0.6(yjs@13.6.27))(yjs@13.6.27)))(@tiptap/pm@2.26.1)(@tiptap/react@2.26.1(@tiptap/core@2.26.1(@tiptap/pm@2.26.1))(@tiptap/pm@2.26.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(@tiptap/suggestion@2.26.1(@tiptap/core@2.26.1(@tiptap/pm@2.26.1))(@tiptap/pm@2.26.1))(@types/json-schema@7.0.15)(@types/react-dom@19.1.9(@types/react@19.1.12))(@types/react@19.1.12)(prosemirror-model@1.25.3)(prosemirror-state@1.4.3)(prosemirror-view@1.40.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(y-protocols@1.0.6(yjs@13.6.27))':
+  '@liveblocks/react-tiptap@3.5.1(@tiptap/extension-collaboration-cursor@2.26.1(@tiptap/core@2.26.1(@tiptap/pm@2.26.1))(y-prosemirror@1.3.7(prosemirror-model@1.25.3)(prosemirror-state@1.4.3)(prosemirror-view@1.40.1)(y-protocols@1.0.6(yjs@13.6.27))(yjs@13.6.27)))(@tiptap/extension-collaboration@2.26.1(@tiptap/core@2.26.1(@tiptap/pm@2.26.1))(@tiptap/pm@2.26.1)(y-prosemirror@1.3.7(prosemirror-model@1.25.3)(prosemirror-state@1.4.3)(prosemirror-view@1.40.1)(y-protocols@1.0.6(yjs@13.6.27))(yjs@13.6.27)))(@tiptap/pm@2.26.1)(@tiptap/react@2.26.1(@tiptap/core@2.26.1(@tiptap/pm@2.26.1))(@tiptap/pm@2.26.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(@tiptap/suggestion@2.26.1(@tiptap/core@2.26.1(@tiptap/pm@2.26.1))(@tiptap/pm@2.26.1))(@types/json-schema@7.0.15)(@types/react-dom@19.1.9(@types/react@19.1.12))(@types/react@19.1.12)(prosemirror-model@1.25.3)(prosemirror-state@1.4.3)(prosemirror-view@1.40.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(y-protocols@1.0.6(yjs@13.6.27))':
     dependencies:
       '@floating-ui/react-dom': 2.1.6(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
-      '@liveblocks/client': 3.5.0(@types/json-schema@7.0.15)
-      '@liveblocks/core': 3.5.0(@types/json-schema@7.0.15)
-      '@liveblocks/react': 3.5.0(@types/json-schema@7.0.15)(@types/react-dom@19.1.9(@types/react@19.1.12))(@types/react@19.1.12)(react@19.1.1)
-      '@liveblocks/react-ui': 3.5.0(@types/json-schema@7.0.15)(@types/react-dom@19.1.9(@types/react@19.1.12))(@types/react@19.1.12)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
-      '@liveblocks/yjs': 3.5.0(@types/json-schema@7.0.15)(yjs@13.6.27)
+      '@liveblocks/client': 3.5.1(@types/json-schema@7.0.15)
+      '@liveblocks/core': 3.5.1(@types/json-schema@7.0.15)
+      '@liveblocks/react': 3.5.1(@types/json-schema@7.0.15)(@types/react-dom@19.1.9(@types/react@19.1.12))(@types/react@19.1.12)(react@19.1.1)
+      '@liveblocks/react-ui': 3.5.1(@types/json-schema@7.0.15)(@types/react-dom@19.1.9(@types/react@19.1.12))(@types/react@19.1.12)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+      '@liveblocks/yjs': 3.5.1(@types/json-schema@7.0.15)(yjs@13.6.27)
       '@radix-ui/react-select': 2.2.6(@types/react-dom@19.1.9(@types/react@19.1.12))(@types/react@19.1.12)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@radix-ui/react-toggle': 1.1.10(@types/react-dom@19.1.9(@types/react@19.1.12))(@types/react@19.1.12)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@tiptap/core': 2.26.1(@tiptap/pm@2.26.1)
@@ -5092,12 +5132,12 @@ snapshots:
       - prosemirror-view
       - y-protocols
 
-  '@liveblocks/react-ui@3.5.0(@types/json-schema@7.0.15)(@types/react-dom@19.1.9(@types/react@19.1.12))(@types/react@19.1.12)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
+  '@liveblocks/react-ui@3.5.1(@types/json-schema@7.0.15)(@types/react-dom@19.1.9(@types/react@19.1.12))(@types/react@19.1.12)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
     dependencies:
       '@floating-ui/react-dom': 2.1.6(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
-      '@liveblocks/client': 3.5.0(@types/json-schema@7.0.15)
-      '@liveblocks/core': 3.5.0(@types/json-schema@7.0.15)
-      '@liveblocks/react': 3.5.0(@types/json-schema@7.0.15)(@types/react-dom@19.1.9(@types/react@19.1.12))(@types/react@19.1.12)(react@19.1.1)
+      '@liveblocks/client': 3.5.1(@types/json-schema@7.0.15)
+      '@liveblocks/core': 3.5.1(@types/json-schema@7.0.15)
+      '@liveblocks/react': 3.5.1(@types/json-schema@7.0.15)(@types/react-dom@19.1.9(@types/react@19.1.12))(@types/react@19.1.12)(react@19.1.1)
       '@radix-ui/react-dropdown-menu': 2.1.16(@types/react-dom@19.1.9(@types/react@19.1.12))(@types/react@19.1.12)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@radix-ui/react-popover': 1.1.15(@types/react-dom@19.1.9(@types/react@19.1.12))(@types/react@19.1.12)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@radix-ui/react-slot': 1.2.3(@types/react@19.1.12)(react@19.1.1)
@@ -5117,10 +5157,10 @@ snapshots:
     transitivePeerDependencies:
       - '@types/json-schema'
 
-  '@liveblocks/react@3.5.0(@types/json-schema@7.0.15)(@types/react-dom@19.1.9(@types/react@19.1.12))(@types/react@19.1.12)(react@19.1.1)':
+  '@liveblocks/react@3.5.1(@types/json-schema@7.0.15)(@types/react-dom@19.1.9(@types/react@19.1.12))(@types/react@19.1.12)(react@19.1.1)':
     dependencies:
-      '@liveblocks/client': 3.5.0(@types/json-schema@7.0.15)
-      '@liveblocks/core': 3.5.0(@types/json-schema@7.0.15)
+      '@liveblocks/client': 3.5.1(@types/json-schema@7.0.15)
+      '@liveblocks/core': 3.5.1(@types/json-schema@7.0.15)
       react: 19.1.1
     optionalDependencies:
       '@types/react': 19.1.12
@@ -5128,10 +5168,10 @@ snapshots:
     transitivePeerDependencies:
       - '@types/json-schema'
 
-  '@liveblocks/yjs@3.5.0(@types/json-schema@7.0.15)(yjs@13.6.27)':
+  '@liveblocks/yjs@3.5.1(@types/json-schema@7.0.15)(yjs@13.6.27)':
     dependencies:
-      '@liveblocks/client': 3.5.0(@types/json-schema@7.0.15)
-      '@liveblocks/core': 3.5.0(@types/json-schema@7.0.15)
+      '@liveblocks/client': 3.5.1(@types/json-schema@7.0.15)
+      '@liveblocks/core': 3.5.1(@types/json-schema@7.0.15)
       '@noble/hashes': 1.8.0
       js-base64: 3.7.8
       y-indexeddb: 9.0.12(yjs@13.6.27)
@@ -5639,6 +5679,8 @@ snapshots:
   '@shikijs/vscode-textmate@10.0.2': {}
 
   '@sindresorhus/is@4.6.0': {}
+
+  '@stablelib/base64@1.0.1': {}
 
   '@szmarczak/http-timer@4.0.6':
     dependencies:
@@ -7050,6 +7092,8 @@ snapshots:
 
   fast-levenshtein@2.0.6: {}
 
+  fast-sha256@1.3.0: {}
+
   fastq@1.19.1:
     dependencies:
       reusify: 1.1.0
@@ -8304,6 +8348,12 @@ snapshots:
     dependencies:
       semver: 7.7.2
 
+  node-fetch@2.7.0(encoding@0.1.13):
+    dependencies:
+      whatwg-url: 5.0.0
+    optionalDependencies:
+      encoding: 0.1.13
+
   node-gyp@9.4.1:
     dependencies:
       env-paths: 2.2.1
@@ -9251,6 +9301,8 @@ snapshots:
     dependencies:
       is-number: 7.0.0
 
+  tr46@0.0.3: {}
+
   trim-lines@3.0.1: {}
 
   trim-trailing-lines@2.1.0: {}
@@ -9502,6 +9554,13 @@ snapshots:
       defaults: 1.0.4
 
   web-namespaces@2.0.1: {}
+
+  webidl-conversions@3.0.1: {}
+
+  whatwg-url@5.0.0:
+    dependencies:
+      tr46: 0.0.3
+      webidl-conversions: 3.0.1
 
   which-boxed-primitive@1.1.1:
     dependencies:

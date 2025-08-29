@@ -1,4 +1,3 @@
-import { BlockNoteEditor } from "@blocknote/core";
 import "@blocknote/core/fonts/inter.css";
 import {
   BlockNoteView,
@@ -6,9 +5,9 @@ import {
   type Theme,
 } from "@blocknote/mantine";
 import "@blocknote/mantine/style.css";
-import { useCreateBlockNoteWithLiveblocks } from "@liveblocks/react-blocknote";
 
 import { JSX } from "react";
+import { useScrapPaper } from "../providers/scrap-paper-context";
 import { Threads } from "./Threads";
 
 const darkTheme: Theme = {
@@ -17,10 +16,7 @@ const darkTheme: Theme = {
 };
 
 export function Editor(): JSX.Element {
-  const editor = useCreateBlockNoteWithLiveblocks(
-    {},
-    { mentions: true }
-  ) as BlockNoteEditor;
+  const { editor } = useScrapPaper();
 
   return (
     <div className="editor-container">

@@ -4,7 +4,8 @@ import {
   useOthers,
   useUpdateMyPresence,
 } from "@liveblocks/react";
-import { DotIcon, MegaphoneIcon } from "lucide-react";
+import { useScrapPaper } from "@renderer/providers/scrap-paper-context";
+import { DotIcon, MegaphoneIcon, TrashIcon } from "lucide-react";
 import { JSX, useEffect, useRef } from "react";
 import { Button } from "./shadcn-ui/button";
 
@@ -12,6 +13,7 @@ export default function TitleBar(): JSX.Element {
   const others = useOthers();
   const updateMyPresence = useUpdateMyPresence();
   const broadcast = useBroadcastEvent();
+  const { clearDoc } = useScrapPaper();
   const numOthers = useRef(0);
 
   useEffect(() => {
@@ -29,7 +31,7 @@ export default function TitleBar(): JSX.Element {
       window.api.removeWindowFocus(handleFocus as any);
       window.api.removeWindowBlur(handleBlur as any);
     };
-  }, []);
+  }, [updateMyPresence]);
 
   useEventListener(({ event }) => {
     if (event?.type === "pay-attention") {
@@ -39,6 +41,10 @@ export default function TitleBar(): JSX.Element {
 
   const handlePayAttention = () => {
     broadcast({ type: "pay-attention" });
+  };
+
+  const handleClear = () => {
+    clearDoc();
   };
 
   useEffect(() => {
@@ -71,6 +77,14 @@ export default function TitleBar(): JSX.Element {
         onClick={handlePayAttention}
       >
         <MegaphoneIcon />
+      </Button>
+      <Button
+        variant="ghost"
+        size="sm"
+        className="text-gray-500 hover:bg-transparent hover:text-gray-200"
+        onClick={handleClear}
+      >
+        <TrashIcon />
       </Button>
     </div>
   );

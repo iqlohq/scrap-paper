@@ -13,6 +13,7 @@ import { Loader } from "./components/shadcn-ui/loader";
 import TitleBar from "./components/TitleBar";
 import "./globals.css";
 import "./styles.css";
+import { ScrapPaperProvider } from "./providers/scrap-paper-provider";
 
 // TODO: Notification - focus button, onOpen, onClose ✅
 // TODO: Authentication Done. ✅
@@ -35,8 +36,10 @@ export default function App(): JSX.Element {
             </div>
           }
         >
-          <TitleBar />
-          <Editor />
+          <ScrapPaperProvider>
+            <TitleBar />
+            <Editor />
+          </ScrapPaperProvider>
         </ClientSideSuspense>
       </RoomProvider>
     </LiveblocksProvider>

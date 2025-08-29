@@ -5,6 +5,7 @@ html {
 
 body {
   background-color: #1f1f1f;
+  margin: 0;
 }
 
 #root {
@@ -35,21 +36,6 @@ body {
   margin-top: 40px;
 }
 
-body {
-  margin: 0;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    background: #0c0c0c;
-  }
-}
-.editor {
-  position: absolute;
-  inset: 0;
-  max-width: 1024px;
-  margin: 0 auto;
-}
 .bn-editor {
   padding: 36px 52px;
   min-height: 100%;
@@ -87,4 +73,44 @@ body {
   .anchored-threads {
     display: none;
   }
+}
+
+.editor {
+  position: relative;
+  height: 100%;
+}
+div:has(> .editor) {
+  height: 100%;
+}
+.bn-container {
+  margin-left: 0px;
+  margin-right: 0px;
+  max-width: 100%;
+  width: 100%;
+}
+/* Hide username tooltip on collaboration cursors, keep caret visible */
+.collaboration-cursor__label {
+  display: none !important;
+}
+
+.collaboration-cursor__caret {
+  margin-left: 1px !important;
+}
+
+.bn-container .bn-default-styles {
+  font-size: 16px;
+  font-weight: 450;
+  font-family: monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.bn-container [class^="placeholder-selector-"] {
+  padding-top: 0px !important;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.bn-mantine .bn-side-menu {
+  --mantine-scale: 0.75;
 }

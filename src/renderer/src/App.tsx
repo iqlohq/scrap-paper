@@ -7,12 +7,9 @@ import {
   RoomProvider,
 } from "@liveblocks/react/suspense";
 import { JSX } from "react";
-import "./assets/shadcn.css";
 import { Editor } from "./components/Editor";
 import { Loader } from "./components/shadcn-ui/loader";
 import TitleBar from "./components/TitleBar";
-import "./globals.css";
-import "./styles.css";
 import { ScrapPaperProvider } from "./providers/scrap-paper-provider";
 
 // TODO: Notification - focus button, onOpen, onClose ✅

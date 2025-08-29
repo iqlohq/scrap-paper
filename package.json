@@ -1,9 +1,9 @@
 {
-  "name": "scrap-paper",
+  "name": "Scrap Paper",
   "version": "1.0.0",
-  "description": "A lightweight scrap-paper",
+  "description": "A lightweight Scrap Paper",
   "main": "./out/main/index.js",
-  "author": "iqlo",
+  "author": "Ryan Hanson",
   "homepage": "https://electron-vite.org",
   "scripts": {
     "format": "prettier --write .",

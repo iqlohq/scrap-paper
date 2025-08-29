@@ -13,9 +13,9 @@ import "./assets/shadcn.css";
 import "./globals.css";
 import "./styles.css";
 
-// TODO: Notification - focus button, onOpen, onClose
-// TODO: Authentication Done.
-// TODO: Styling - loading. checkmark
+// TODO: Notification - focus button, onOpen, onClose ✅
+// TODO: Authentication Done. ✅
+// TODO: Styling - loading, checkmark, min-size
 // TODO: Hotkeys - F6 to open/close
 // TODO: Startup
 

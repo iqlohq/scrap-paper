@@ -32,3 +32,12 @@ div:has(> .editor) {
 .bn-container h6 {
   font-size: 14px;
 }
+
+/* Hide username tooltip on collaboration cursors, keep caret visible */
+.collaboration-cursor__label {
+  display: none !important;
+}
+
+.collaboration-cursor__caret {
+  margin-left: 1px !important;
+}

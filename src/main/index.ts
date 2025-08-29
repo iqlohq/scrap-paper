@@ -79,6 +79,8 @@ app.whenReady().then(() => {
       title: "Scrap Paper",
       body: msg,
     }).show();
+    app.dock?.bounce();
+    app.dock?.setBadge("•");
   });
 
   app.on("before-quit", () => {
@@ -88,6 +90,7 @@ app.whenReady().then(() => {
   app.on("activate", function () {
     // On macOS it's common to re-create a window in the app when the
     // dock icon is clicked and there are no other windows open.
+    app.dock?.setBadge("");
     const windows = BrowserWindow.getAllWindows();
     if (windows.length === 0) {
       createWindow();

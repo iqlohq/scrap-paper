@@ -31,8 +31,10 @@ export default function TitleBar(): JSX.Element {
     };
   }, []);
 
-  useEventListener(({ event, user, connectionId }) => {
-    console.log(event, user, connectionId);
+  useEventListener(({ event }) => {
+    if (event?.type === "pay-attention") {
+      window.api.sendNotification("Attention Please!");
+    }
   });
 
   const handlePayAttention = () => {

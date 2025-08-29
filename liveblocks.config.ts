@@ -5,6 +5,9 @@ declare global {
       id: string;
       status: "active" | "away" | "offline";
     };
+    RoomEvent: {
+      type: "pay-attention";
+    };
   }
 }
 export {};

@@ -105,8 +105,9 @@ div:has(> .editor) {
 }
 
 .bn-container .bn-default-styles p,
-code {
-  font-size: 14px;
+code,
+blockquote {
+  font-size: 14px !important;
 }
 
 .bn-editor {
@@ -187,7 +188,7 @@ code {
   margin-bottom: 3px;
 }
 
-.bn-block .bn-block-content pre code {
+.bn-block-content[data-content-type="codeBlock"] > pre > code {
   background-color: inherit;
   color: inherit;
   padding: inherit;
@@ -196,4 +197,90 @@ code {
 
 .bn-block-content[data-content-type="checkListItem"] > div > div > input {
   background-color: #2f2f2f00 !important;
+}
+
+/* Scope to BlockNote task items (adjust selector if needed) */
+.bn-editor [data-content-type="checkListItem"] input[type="checkbox"] {
+  /* size & vars */
+  --size: 16px;
+  --radius: 4px;
+  --stroke: 2px; /* checkmark thickness */
+  --border: #c9c9c9; /* unchecked border */
+  --hover-bg: rgba(0, 0, 0, 0.06);
+  --checked: #2eaadc; /* Notion-ish blue */
+  --tick: #fff;
+
+  appearance: none;
+  -webkit-appearance: none;
+  box-sizing: border-box;
+  width: var(--size);
+  height: var(--size);
+  margin: auto;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  background: transparent;
+  display: inline-block;
+  position: relative; /* so ::after can be absolutely centered */
+  vertical-align: -2px;
+  cursor: pointer;
+  transition:
+    background-color 140ms ease,
+    border-color 140ms ease,
+    box-shadow 140ms ease,
+    transform 40ms ease;
+}
+
+.bn-editor [data-content-type="checkListItem"] input[type="checkbox"]:hover {
+  background: var(--hover-bg);
+}
+
+.bn-editor [data-content-type="checkListItem"] input[type="checkbox"]:active {
+  transform: translateY(0.5px);
+}
+
+.bn-editor
+  [data-content-type="checkListItem"]
+  input[type="checkbox"]:focus-visible {
+  outline: 2px solid color-mix(in oklab, var(--checked), #000 12%);
+  outline-offset: 2px;
+}
+
+/* Checked = filled blue square */
+.bn-editor [data-content-type="checkListItem"] input[type="checkbox"]:checked {
+  background: var(--checked);
+  border-color: var(--checked);
+}
+
+/* The checkmark — absolute, centered, crisp */
+.bn-editor [data-content-type="checkListItem"] input[type="checkbox"]::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  /* size relative to box; tweak these two for look */
+  width: 50%;
+  height: 80%;
+  border: var(--stroke) solid transparent;
+  border-right-color: var(--tick);
+  border-bottom-color: var(--tick);
+  transform: translate(-50%, -54%) rotate(45deg) scale(0.9);
+  opacity: 0;
+  transition:
+    opacity 140ms ease,
+    transform 140ms ease;
+}
+
+.bn-editor
+  [data-content-type="checkListItem"]
+  input[type="checkbox"]:checked::after {
+  opacity: 1;
+  transform: translate(-50%, -54%) rotate(45deg) scale(1);
+}
+
+/* Optional: dark-mode border/hover tweaks */
+@media (prefers-color-scheme: dark) {
+  .bn-editor [data-content-type="checkListItem"] input[type="checkbox"] {
+    --border: #5a5a5a;
+    --hover-bg: rgba(255, 255, 255, 0.07);
+  }
 }

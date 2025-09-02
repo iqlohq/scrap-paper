@@ -66,11 +66,11 @@ export function ScrapPaperProvider({ children }: ScrapPaperProviderProps) {
             [
               {
                 type: "heading",
-                props: { level: 2, backgroundColor: "#61AFEF" },
+                props: { level: 2, textColor: "#61AFEF" },
                 content: [
                   {
                     type: "link",
-                    content: "🎥 Screen sharing started - Click here",
+                    content: "🎥 Screen Shared - Click here",
                     href: "https://scrap-paper.daily.co/iqlo-joe",
                   },
                 ],

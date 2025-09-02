@@ -16,10 +16,12 @@ let isQuitting = false;
 let mainWindow: BrowserWindow | null = null;
 let tray: Tray | null = null;
 let isTrayToggleInProgress = false;
+let currentOpacity = 1.0; // range [0.1, 1.0]
 
 function createWindow(): void {
   // Create the browser window.
   const win = new BrowserWindow({
+    alwaysOnTop: true,
     minWidth: 300,
     minHeight: 300,
     width: 900,
@@ -145,6 +147,21 @@ app.whenReady().then(() => {
     }).show();
     app.dock?.bounce();
     app.dock?.setBadge("•");
+  });
+
+  ipcMain.on("adjust-opacity", (_, delta: number) => {
+    if (!mainWindow) return;
+    // Each delta step adjusts by 0.1 (10%)
+    const step = 0.05;
+    const next = Math.max(
+      0.05,
+      Math.min(
+        1.0,
+        parseFloat((currentOpacity + Math.sign(delta) * step).toFixed(2))
+      )
+    );
+    currentOpacity = next;
+    mainWindow.setOpacity(currentOpacity);
   });
 
   app.on("before-quit", () => {

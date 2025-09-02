@@ -6,7 +6,7 @@ import {
   LiveblocksProvider,
   RoomProvider,
 } from "@liveblocks/react/suspense";
-import { JSX } from "react";
+import { JSX, useEffect } from "react";
 import { Editor } from "./components/Editor";
 import { Loader } from "./components/shadcn-ui/loader";
 import TitleBar from "./components/TitleBar";
@@ -19,6 +19,21 @@ import { ScrapPaperProvider } from "./providers/scrap-paper-provider";
 // TODO: Startup
 
 export default function App(): JSX.Element {
+  // Capture Ctrl + wheel to adjust window opacity by 10% steps
+  // Up increases opacity, down decreases. Clamped to [0.1, 1.0].
+  useEffect(() => {
+    const onWheel = (e: WheelEvent) => {
+      if (!e.ctrlKey) return;
+      e.preventDefault();
+      const delta = e.deltaY;
+      // Negative deltaY = scroll up -> increase; positive = scroll down -> decrease
+      const stepDirection = delta < 0 ? 1 : -1;
+      window.api?.adjustOpacity?.(stepDirection);
+    };
+    window.addEventListener("wheel", onWheel, { passive: false });
+    return () => window.removeEventListener("wheel", onWheel);
+  }, []);
+
   return (
     <LiveblocksProvider publicApiKey="pk_dev_t2fgHDjp63aK6LNHVO5WxSqruZH_fRwqDvkP5Hjl_0GwThDWUUH6PcKlRfdC3B0U">
       <RoomProvider

@@ -17,6 +17,7 @@ declare global {
         callback: (event: Electron.IpcRendererEvent) => void
       ) => void;
       sendNotification: (msg: string) => void;
+      adjustOpacity: (delta: number) => void;
     };
   }
 }

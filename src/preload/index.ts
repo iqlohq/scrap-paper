@@ -18,6 +18,9 @@ const api = {
   sendNotification: (msg: string) => {
     ipcRenderer.send("notify", msg);
   },
+  adjustOpacity: (delta: number) => {
+    ipcRenderer.send("adjust-opacity", delta);
+  },
 };
 
 // Use `contextBridge` APIs to expose Electron APIs to

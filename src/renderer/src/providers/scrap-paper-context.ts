@@ -6,6 +6,9 @@ interface ScrapPaperContextState {
   showLiveCursor: boolean;
   setShowLiveCursor: (show: boolean) => void;
   clearDoc: () => void;
+  toggleScreenShare: () => void;
+  leaveScreenShare: () => void;
+  dailyStatus: "connected" | "disconnected";
 }
 
 export const ScrapPaperContext = createContext<

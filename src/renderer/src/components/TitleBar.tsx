@@ -4,8 +4,15 @@ import {
   useOthers,
   useUpdateMyPresence,
 } from "@liveblocks/react";
+import { cn } from "@renderer/lib/utils";
 import { useScrapPaper } from "@renderer/providers/scrap-paper-context";
-import { DotIcon, MegaphoneIcon, TextCursor, TrashIcon } from "lucide-react";
+import {
+  DotIcon,
+  MegaphoneIcon,
+  ScreenShareIcon,
+  TextCursor,
+  TrashIcon,
+} from "lucide-react";
 import { JSX, useCallback, useEffect, useRef } from "react";
 import { Button } from "./shadcn-ui/button";
 import { Toggle } from "./shadcn-ui/toggle";
@@ -14,7 +21,13 @@ export default function TitleBar(): JSX.Element {
   const others = useOthers();
   const updateMyPresence = useUpdateMyPresence();
   const broadcast = useBroadcastEvent();
-  const { clearDoc, showLiveCursor, setShowLiveCursor } = useScrapPaper();
+  const {
+    clearDoc,
+    showLiveCursor,
+    setShowLiveCursor,
+    toggleScreenShare,
+    dailyStatus,
+  } = useScrapPaper();
   const numOthers = useRef(0);
 
   useEffect(() => {
@@ -59,6 +72,10 @@ export default function TitleBar(): JSX.Element {
     }
   }, [others]);
 
+  const handleScreenShare = useCallback(() => {
+    toggleScreenShare();
+  }, [toggleScreenShare]);
+
   // Hotkeys: Cmd+N (notify), Cmd+D (clear), Cmd+L (toggle live cursor)
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
@@ -74,15 +91,24 @@ export default function TitleBar(): JSX.Element {
       } else if (key === "l") {
         e.preventDefault();
         setShowLiveCursor(!showLiveCursor);
+      } else if (key === "s") {
+        e.preventDefault();
+        handleScreenShare();
       }
     };
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [showLiveCursor, handlePayAttention, handleClear, setShowLiveCursor]);
+  }, [
+    showLiveCursor,
+    handlePayAttention,
+    handleClear,
+    setShowLiveCursor,
+    handleScreenShare,
+  ]);
 
   const online = others.length > 0;
   const active = others.some((other) => other.presence.status === "active");
-  const cn = online
+  const onlineStatusClass = online
     ? active
       ? "text-green-500"
       : "text-yellow-500"
@@ -90,7 +116,7 @@ export default function TitleBar(): JSX.Element {
   return (
     <div className="drag-region items-center">
       <div>
-        <DotIcon className={cn} />
+        <DotIcon className={onlineStatusClass} />
       </div>
       <Button
         variant="ghost"
@@ -111,6 +137,18 @@ export default function TitleBar(): JSX.Element {
       >
         <TextCursor />
       </Toggle>
+      <Button
+        variant="ghost"
+        size="sm"
+        className={cn(
+          "hover:bg-transparent hover:text-gray-200",
+          dailyStatus === "connected" ? "text-green-600" : "text-gray-500"
+        )}
+        onClick={handleScreenShare}
+        title="ScreenShare (Cmd+S)"
+      >
+        <ScreenShareIcon />
+      </Button>
       <Button
         variant="ghost"
         size="sm"

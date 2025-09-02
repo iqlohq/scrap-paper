@@ -1,3 +1,4 @@
+import { DailyProvider, useCallObject } from "@daily-co/daily-react";
 import "@liveblocks/react-tiptap/styles.css";
 import "@liveblocks/react-ui/styles.css";
 import "@liveblocks/react-ui/styles/dark/media-query.css";
@@ -19,8 +20,14 @@ import { ScrapPaperProvider } from "./providers/scrap-paper-provider";
 // TODO: Startup
 
 export default function App(): JSX.Element {
-  // Capture Ctrl + wheel to adjust window opacity by 10% steps
-  // Up increases opacity, down decreases. Clamped to [0.1, 1.0].
+  const callObject = useCallObject({
+    options: {
+      url: "https://scrap-paper.daily.co/iqlo-joe",
+      token:
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvIjp0cnVlLCJyIjoiaXFsby1qb2UiLCJ1IjoiaVFMTyIsInAiOnsiY3MiOiJzdiIsImNyIjp7ImIiOmZhbHNlfX0sImQiOiJlZTg0NDcyMy0zMjg3LTRlM2YtYmFmMC0wYTNjNzgwM2IwZjciLCJpYXQiOjE3NTY4NDM1Njl9.cHHpK6lXl1n_W7MM3HMYnfSjvkLG9Q27XDfYL63zCII",
+    },
+  });
+
   useEffect(() => {
     const onWheel = (e: WheelEvent) => {
       if (!e.ctrlKey) return;
@@ -48,10 +55,12 @@ export default function App(): JSX.Element {
             </div>
           }
         >
-          <ScrapPaperProvider>
-            <TitleBar />
-            <Editor />
-          </ScrapPaperProvider>
+          <DailyProvider callObject={callObject}>
+            <ScrapPaperProvider>
+              <TitleBar />
+              <Editor />
+            </ScrapPaperProvider>
+          </DailyProvider>
         </ClientSideSuspense>
       </RoomProvider>
     </LiveblocksProvider>

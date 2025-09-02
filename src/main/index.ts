@@ -2,11 +2,13 @@ import { electronApp, is, optimizer } from "@electron-toolkit/utils";
 import {
   app,
   BrowserWindow,
+  desktopCapturer,
   globalShortcut,
   ipcMain,
   Menu,
   nativeImage,
   Notification,
+  session,
   shell,
   Tray,
 } from "electron";
@@ -41,6 +43,16 @@ function createWindow(): void {
   });
   win.setContentProtection(true);
   mainWindow = win;
+
+  session.defaultSession.setDisplayMediaRequestHandler(
+    (_, callback) => {
+      desktopCapturer.getSources({ types: ["screen"] }).then((sources) => {
+        // Grant access to the first screen found.
+        callback({ video: sources[0] });
+      });
+    },
+    { useSystemPicker: true }
+  );
 
   win.on("close", (e) => {
     if (process.platform === "darwin" && !isQuitting) {

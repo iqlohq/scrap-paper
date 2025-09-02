@@ -270,6 +270,12 @@ blockquote {
   transform: translate(-50%, -54%) rotate(45deg) scale(1);
 }
 
+.bn-editor[contenteditable="true"] [data-file-block] .bn-add-file-button:hover,
+[data-file-block] .bn-file-name-with-icon:hover,
+.ProseMirror-selectednode .bn-file-name-with-icon {
+  @apply bg-transparent;
+}
+
 /* Optional: dark-mode border/hover tweaks */
 @media (prefers-color-scheme: dark) {
   .bn-editor [data-content-type="checkListItem"] input[type="checkbox"] {

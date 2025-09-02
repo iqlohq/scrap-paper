@@ -2,13 +2,13 @@ import { electronApp, is, optimizer } from "@electron-toolkit/utils";
 import {
   app,
   BrowserWindow,
+  globalShortcut,
   ipcMain,
   Menu,
   nativeImage,
   Notification,
   shell,
   Tray,
-  globalShortcut,
 } from "electron";
 import { join } from "path";
 import icon from "../../resources/icon.png?asset";
@@ -39,6 +39,7 @@ function createWindow(): void {
       sandbox: false,
     },
   });
+  win.setContentProtection(true);
   mainWindow = win;
 
   win.on("close", (e) => {

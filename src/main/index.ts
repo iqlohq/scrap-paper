@@ -8,6 +8,7 @@ import {
   Notification,
   shell,
   Tray,
+  globalShortcut,
 } from "electron";
 import { join } from "path";
 import icon from "../../resources/icon.png?asset";
@@ -184,6 +185,21 @@ app.whenReady().then(() => {
   createWindow();
   createTray();
 
+  // Register global F6 to toggle/show/hide the main window
+  const registerOk = globalShortcut.register("F6", () => {
+    if (!mainWindow) return;
+    if (mainWindow.isVisible()) {
+      mainWindow.hide();
+    } else {
+      if (mainWindow.isMinimized()) mainWindow.restore();
+      mainWindow.show();
+      mainWindow.focus();
+    }
+  });
+  if (!registerOk) {
+    console.warn("Failed to register global shortcut F6");
+  }
+
   app.on("activate", function () {
     // On macOS it's common to re-create a window in the app when the
     // dock icon is clicked and there are no other windows open.
@@ -198,4 +214,9 @@ app.on("window-all-closed", () => {
   if (process.platform !== "darwin") {
     app.quit();
   }
+});
+
+app.on("will-quit", () => {
+  globalShortcut.unregister("F6");
+  globalShortcut.unregisterAll();
 });

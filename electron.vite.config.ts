@@ -1,14 +1,14 @@
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
-import { defineConfig, externalizeDepsPlugin } from "electron-vite";
+import { defineConfig } from "electron-vite";
 import { resolve } from "path";
 
 export default defineConfig({
   main: {
-    plugins: [externalizeDepsPlugin()],
+    plugins: [],
   },
   preload: {
-    plugins: [externalizeDepsPlugin()],
+    plugins: [],
   },
   renderer: {
     resolve: {
@@ -17,5 +17,18 @@ export default defineConfig({
       },
     },
     plugins: [react(), tailwindcss()],
+    build: {
+      target: "chrome115",
+      sourcemap: false,
+      minify: "esbuild",
+      rollupOptions: { treeshake: true },
+      assetsInlineLimit: 0,
+      cssMinify: true,
+      // Optional: split chunks only if you lazy-load big features
+    },
+    esbuild: {
+      drop: ["console", "debugger"],
+      legalComments: "none",
+    },
   },
 });

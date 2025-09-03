@@ -8,8 +8,10 @@ import { cn } from "@renderer/lib/utils";
 import { useScrapPaper } from "@renderer/providers/scrap-paper-context";
 import {
   DotIcon,
+  Loader2Icon,
   MegaphoneIcon,
   ScreenShareIcon,
+  ScreenShareOffIcon,
   TextCursor,
   TrashIcon,
 } from "lucide-react";
@@ -147,7 +149,13 @@ export default function TitleBar(): JSX.Element {
         onClick={handleScreenShare}
         title="ScreenShare (Cmd+S)"
       >
-        <ScreenShareIcon />
+        {dailyStatus === "connecting" ? (
+          <Loader2Icon className="animate-spin" />
+        ) : dailyStatus === "connected" ? (
+          <ScreenShareOffIcon />
+        ) : (
+          <ScreenShareIcon />
+        )}
       </Button>
       <Button
         variant="ghost"

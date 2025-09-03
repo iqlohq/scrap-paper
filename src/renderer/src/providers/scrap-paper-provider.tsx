@@ -30,9 +30,9 @@ export function ScrapPaperProvider({ children }: ScrapPaperProviderProps) {
   ) as BlockNoteEditor;
   const callObject = useDaily();
   const [mediaStream, setMediaStream] = useState<MediaStream | null>(null);
-  const [dailyStatus, setDailyStatus] = useState<"connected" | "disconnected">(
-    "disconnected"
-  );
+  const [dailyStatus, setDailyStatus] = useState<
+    "connected" | "disconnected" | "connecting"
+  >("disconnected");
 
   const clearDoc = () => {
     if (!editor) return;
@@ -46,48 +46,53 @@ export function ScrapPaperProvider({ children }: ScrapPaperProviderProps) {
     await callObject?.stopScreenShare();
     await callObject?.leave();
     setDailyStatus("disconnected");
+    window.api.sendNotification("You stopped sharing your screen.");
+  };
+
+  const insertScreenShareBlock = () => {
+    editor.focus();
+    editor.insertBlocks(
+      [
+        {
+          type: "heading",
+          props: { level: 3, textColor: "#61AFEF" },
+          content: [
+            {
+              type: "link",
+              content:
+                "🎥 Screen Shared - https://scrap-paper.daily.co/iqlo-joe",
+              href: "https://scrap-paper.daily.co/iqlo-joe",
+            },
+          ],
+        },
+      ],
+      editor.document[0],
+      "before"
+    );
   };
 
   const toggleScreenShare = async () => {
+    if (dailyStatus === "connecting") return;
     try {
       if (dailyStatus === "connected") {
         leaveScreenShare();
         return;
       }
+      setDailyStatus("connecting");
+      insertScreenShareBlock();
       await callObject
         ?.join()
-        .then(() => {
-          setDailyStatus("connected");
-          editor.forEachBlock((block) => {
-            console.log(block);
-            return true;
-          });
-          editor.insertBlocks(
-            [
-              {
-                type: "heading",
-                props: { level: 2, textColor: "#61AFEF" },
-                content: [
-                  {
-                    type: "link",
-                    content: "🎥 Screen Shared - Click here",
-                    href: "https://scrap-paper.daily.co/iqlo-joe",
-                  },
-                ],
-              },
-            ],
-            editor.document[0],
-            "before"
-          );
-        })
+        .then(() => {})
         .catch((e) => {
-          setDailyStatus("disconnected");
           console.error("Failed to join", e);
+          leaveScreenShare();
           return;
         });
       const screenshareStream = await navigator.mediaDevices.getDisplayMedia();
       setMediaStream(screenshareStream);
       callObject?.startScreenShare({ mediaStream: screenshareStream });
+      setDailyStatus("connected");
+      window.api.sendNotification("You're sharing your screen.");
       screenshareStream.addEventListener("inactive", () => {
         leaveScreenShare();
       });

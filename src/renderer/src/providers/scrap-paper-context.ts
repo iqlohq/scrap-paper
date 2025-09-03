@@ -8,7 +8,7 @@ interface ScrapPaperContextState {
   clearDoc: () => void;
   toggleScreenShare: () => void;
   leaveScreenShare: () => void;
-  dailyStatus: "connected" | "disconnected";
+  dailyStatus: "connected" | "disconnected" | "connecting";
 }
 
 export const ScrapPaperContext = createContext<

@@ -1,5 +1,6 @@
 import { BlockNoteEditor } from "@blocknote/core";
 import { useDaily } from "@daily-co/daily-react";
+import { useBroadcastEvent } from "@liveblocks/react";
 import { useCreateBlockNoteWithLiveblocks } from "@liveblocks/react-blocknote";
 import { ReactNode, useState } from "react";
 import { ScrapPaperContext } from "./scrap-paper-context";
@@ -28,6 +29,7 @@ export function ScrapPaperProvider({ children }: ScrapPaperProviderProps) {
     },
     { mentions: true }
   ) as BlockNoteEditor;
+  const broadcast = useBroadcastEvent();
   const callObject = useDaily();
   const [mediaStream, setMediaStream] = useState<MediaStream | null>(null);
   const [dailyStatus, setDailyStatus] = useState<
@@ -93,6 +95,7 @@ export function ScrapPaperProvider({ children }: ScrapPaperProviderProps) {
       callObject?.startScreenShare({ mediaStream: screenshareStream });
       setDailyStatus("connected");
       window.api.sendNotification("You're sharing your screen.");
+      broadcast({ type: "pay-attention" });
       screenshareStream.addEventListener("inactive", () => {
         leaveScreenShare();
       });
